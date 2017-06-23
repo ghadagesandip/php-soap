@@ -1,0 +1,7 @@
+<?php
+$client = new SoapClient(null, array('location' => "http://localhost/soap.php",
+                                     'uri'      => "http://test-uri/",
+                                     'style'    => SOAP_DOCUMENT,
+                                     'use'      => SOAP_LITERAL));
+
+pr($client);exit;

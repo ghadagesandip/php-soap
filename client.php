@@ -1,0 +1,25 @@
+<?php
+include 'server.php';
+
+class Client {
+
+
+    public function __construct()
+    {
+
+        $params = array(
+            'location' => 'http://localhost/soap/server.php',
+            'uri' => 'urn://localhost/soap/server.php',
+            'trace' => 1
+        );
+        $this->instance = new SoapClient(NULL, $params);
+    }
+
+
+    public function getName($id_array){
+        return $this->instance->__soapCall('getStudentName', $id_array);
+    }
+
+}
+
+$client = new Client();
