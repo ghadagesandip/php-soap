@@ -2,6 +2,12 @@
 
 class Server {
 
+    public static function authenticate($header_params){
+        if($header_params->username =='webwerks' && $header_params->password =='root') return true;
+        else throw new SOAPFault('Wrong username/password combination', 401);
+    }
+
+
     public function __construct()
     {
 
